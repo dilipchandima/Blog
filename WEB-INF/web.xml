@@ -1,0 +1,90 @@
+<web-app>
+
+
+    <servlet>
+        <servlet-name>input</servlet-name>
+        <servlet-class>input.postinput</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>input</servlet-name>
+        <url-pattern>/newpost</url-pattern>
+        <url-pattern>/editpost/post/newpost</url-pattern>
+    </servlet-mapping>
+ 
+    <servlet>
+        <servlet-name>view</servlet-name>
+        <servlet-class>output.postview</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>view</servlet-name>
+        <url-pattern>/viewpost/post/*</url-pattern>
+    </servlet-mapping> 
+    
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <servlet-class>edit.postedit</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>edit</servlet-name>
+        <url-pattern>/editpost/post/*</url-pattern>
+    </servlet-mapping> 
+    
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>index.postindex</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>appcomment</servlet-name>
+        <servlet-class>admin.appcomment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>appcomment</servlet-name>
+        <url-pattern>/viewpost/admin/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>statics</servlet-name>
+        <servlet-class>admin.statics</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>statics</servlet-name>
+        <url-pattern>/statics</url-pattern>
+    </servlet-mapping>
+  
+    
+    <security-constraint>
+		<display-name>Admin</display-name>
+		<web-resource-collection>
+			<web-resource-name>Admin</web-resource-name>
+			<url-pattern>/statics</url-pattern>
+            <url-pattern>/viewpost/admin/*</url-pattern>
+            <url-pattern>/editpost/post/*</url-pattern>
+            <url-pattern>/newpost</url-pattern>
+			
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Admin's LogIn</realm-name>
+	</login-config>
+    
+    
+</web-app>
