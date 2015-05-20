@@ -3,15 +3,21 @@
     <style>
         body{font-family:"RobotoDraft","Roboto",'sans-serif','Open Sans';color: #404040;background-color: #ebebeb;padding: 0;margin: 0 auto;left: 50%;width: 1000px;}
         .aa{background-color: #364956;color: #ebebeb;padding: 10px;font-size: 60px;margin: 0 auto;}
-        .btn{
+         body{
+            font-family:"RobotoDraft","Roboto",'sans-serif','Open Sans';
+            color: #404040;
+            background-color: #ebebeb;
+            padding: 0;
+            margin: 0 auto;
+            left: 50%;
+            width: 1000px;
+        }
+        .aa{
             background-color: #364956;
             color: #ebebeb;
-            height: 10px;
-            width: 200px;
-            padding: 3px;
-            font-size: 12px;
-            text-decoration: none;
-            line-height: 24px;
+            padding: 10px;
+            font-size: 60px;
+            margin: 0 auto;
         }
         .mnubtn{
             background-color: #364956;
